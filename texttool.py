@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-
-
 def process_line(line):
     if " " not in line:
         return "No command or no argument given"
@@ -10,27 +8,26 @@ def process_line(line):
 
     if cmd == "uppercase":
         return text.upper()
-    if cmd == "lowercase":
+    elif cmd == "lowercase":
         return text.lower()
-    
-    elif command == "count-words":
-    text = input()
-    print(len(text.split()))
-
+    elif cmd == "count-words":
+        return str(len(text.split()))
+    elif cmd == "length":
+        return str(len(text))
+    elif cmd == "prefix":
+        return text[:10]
 
     return "Unknown command " + cmd
-
 
 
 def main():
     while True:
         try:
-            line = input("commade> ")
+            line = input("commande> ")
         except EOFError:
             break
 
         print(process_line(line))
-
 
 
 if __name__ == "__main__":
